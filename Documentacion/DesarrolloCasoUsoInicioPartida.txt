@@ -1,0 +1,5 @@
+Desarrollo de caso de uso de Inicio de partida.
+
+*Luego de haberse logeado, el jugador queda habilitado para iniciar una partida nueva.
+*El sistema queda esperando nuevo jugadores por un tiempo establecido, luego de este si no se conecto ningun jugador, el sitema genera los jugadores que nesetie para iniciar la partida.
+*El sistema inicia la partida.

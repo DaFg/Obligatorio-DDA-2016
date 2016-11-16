@@ -59,7 +59,7 @@ public class App {
 		System.out.println("Comienzo transaccion");
 		em.getTransaction().begin();
 
-		System.out.println("Finalizo Transaccion");
-		em.getTransaction().commit();
+		/*System.out.println("Finalizo Transaccion");
+		em.getTransaction().commit();*/
 	}
 }

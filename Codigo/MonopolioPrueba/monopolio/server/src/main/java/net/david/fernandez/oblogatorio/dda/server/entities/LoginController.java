@@ -70,7 +70,7 @@ public class LoginController extends Login implements Serializable {
 		System.out.println(contrasenia);
 		System.out.println("Fin resivirLogin en LoginController");
 
-		// conecDb();
+		//conecDb();
 
 	}
 
@@ -79,7 +79,7 @@ public class LoginController extends Login implements Serializable {
 	 * pensar algun patron.
 	 */
 
-	public static void conecDb() {
+	/*public static void conecDb() {
 		// --Desde aqui JPA--//
 		System.out.println("Comienza JPA");
 
@@ -94,6 +94,8 @@ public class LoginController extends Login implements Serializable {
 		Login l = em.find(Login.class, log.getNombre());
 		System.out.println("Finalizo Transaccion");
 		em.getTransaction().commit();
-	}
+	}*/
+	
+	
 
 }

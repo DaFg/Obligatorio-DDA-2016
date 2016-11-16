@@ -6,34 +6,10 @@ public class Dado {
 	 * Atributos y Propiedades
 	 */
 
-	private int Dado1;
-	private int Dado2;
-	private int ValorTirada;
+	private int Valor1;
+	private int Valor2;
+	private int lados;
 	private Boolean Repetido;
-
-	public int getDado1() {
-		return Dado1;
-	}
-
-	public void setDado1(int dado1) {
-		Dado1 = dado1;
-	}
-
-	public int getDado2() {
-		return Dado2;
-	}
-
-	public void setDado2(int dado2) {
-		Dado2 = dado2;
-	}
-
-	public int getValorTirada() {
-		return ValorTirada;
-	}
-
-	public void setValorTirada(int valorTirada) {
-		ValorTirada = valorTirada;
-	}
 
 	public Boolean getRepetido() {
 		return Repetido;
@@ -43,12 +19,28 @@ public class Dado {
 		Repetido = repetido;
 	}
 
+	public int getValor1() {
+		return Valor1;
+	}
+
+	public void setValor1(int valor1) {
+		Valor1 = valor1;
+	}
+
+	public int getValor2() {
+		return Valor2;
+	}
+
+	public void setValor2(int valor2) {
+		Valor2 = valor2;
+	}
+
 	/**
 	 * Constructores
 	 */
 
 	public Dado() {
-		// TODO Auto-generated constructor stub
+		this.lados = 6;
 	}
 
 	/**
@@ -56,12 +48,12 @@ public class Dado {
 	 */
 
 	public void TirarDado() {
-		
-
+		this.Valor1 = lanzar();
+		this.Valor2 = lanzar();
 	}
 
-	public void Repetido() {
-
+	public int lanzar() {
+		return (int) (Math.random() * lados) + 1;
 	}
 
 }

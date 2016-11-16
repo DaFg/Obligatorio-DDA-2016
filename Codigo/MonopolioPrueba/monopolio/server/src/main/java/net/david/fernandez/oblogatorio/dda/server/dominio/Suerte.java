@@ -29,8 +29,8 @@ public class Suerte extends Casilla {
 	 * Constructores
 	 */
 
-	public Suerte() {
-		// TODO Auto-generated constructor stub
+	public Suerte(String nombre) {
+		super(nombre);
 	}
 
 	/*

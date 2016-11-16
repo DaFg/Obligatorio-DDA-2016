@@ -31,7 +31,7 @@ public class Comunidad extends Casilla {
 
 	public Comunidad(String nombre) {
 		// TODO Auto-generated constructor stub
-		super(nombre)
+		super(nombre);
 	}
 
 	/*

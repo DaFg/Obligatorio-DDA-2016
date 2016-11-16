@@ -4,7 +4,7 @@ public class Estate extends Propiedades {
 
 	
 
-	private boolean comprable;
+	private boolean construible;
 	private boolean vendible;
 	private int casas;
 	private boolean hotel;
@@ -20,20 +20,30 @@ public class Estate extends Propiedades {
 	public Estate(String nombre, int precioPropiedad, int precioHipoteca,
 			int renta,int precioCasa, int precioHotel, int rentaCasa1,
 			int rentaCasa2, int rentaCasa3, int rentaCasa4, int rentaHotel) {
-		
-		
+		super(nombre,precioPropiedad,precioHipoteca,renta);
+		this.construible=false;
+		this.vendible=false;
+		this.casas=0;
+		this.hotel=false;
+		this.precioCasa=precioPropiedad;
+		this.precioHotel=precioHotel;
+		this.rentaCasa1=rentaCasa1;
+		this.rentaCasa2=rentaCasa2;
+		this.rentaCasa3=rentaCasa3;
+		this.rentaCasa4=rentaCasa4;
+		this.rentaHotel=rentaHotel;
 		
 	}
 
 
-	public boolean isComprable() {
-		return comprable;
+	public boolean isconstruible() {
+		return construible;
 	}
 
 
 
-	public void setComprable(boolean comprable) {
-		this.comprable = comprable;
+	public void setconstruible(boolean comprable) {
+		this.construible = comprable;
 	}
 
 

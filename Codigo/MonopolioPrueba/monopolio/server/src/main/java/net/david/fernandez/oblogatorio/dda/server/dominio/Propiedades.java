@@ -1,6 +1,6 @@
 package net.david.fernandez.oblogatorio.dda.server.dominio;
 
-public class Propiedades {
+public class Propiedades extends Casilla {
 
 	/**
 	 * Atributos y Propiedades
@@ -8,12 +8,22 @@ public class Propiedades {
 
 	private Boolean Comprado;
 	private Jugador Duenio;
-	private Boolean Hipoteca;
+	private Boolean Hipotecado;
 	private int Alquiler;
 	private int CostoCompra;
 	private int CostoHipoteca;
 	private String Tipo;
 
+	public Propiedades(String nombre,int precioPropiedad,int precioHipoteca, int precioRenta) {
+		super(nombre);
+		this.Hipotecado=false;
+		this.Duenio=null;
+		this.Comprado=false;
+		this.CostoCompra=precioPropiedad;
+		this.Alquiler=precioRenta;
+		this.CostoHipoteca=precioHipoteca;
+		
+	}
 	public Boolean getComprado() {
 		return Comprado;
 	}
@@ -30,12 +40,12 @@ public class Propiedades {
 		Duenio = duenio;
 	}
 
-	public Boolean getHipoteca() {
-		return Hipoteca;
+	public Boolean getHipotecado() {
+		return Hipotecado;
 	}
 
-	public void setHipoteca(Boolean hipoteca) {
-		Hipoteca = hipoteca;
+	public void setHipotecado(Boolean hipoteca) {
+		Hipotecado = hipoteca;
 	}
 
 	public int getAlquiler() {
@@ -69,14 +79,16 @@ public class Propiedades {
 	public void setTipo(String tipo) {
 		Tipo = tipo;
 	}
-
+	public void pagarRenta(Jugador jugador){
+		
+		jugador.setDinero(jugador.getDinero()-Alquiler);
+		Duenio.setDinero(Duenio.getDinero()+Alquiler);
+		
+	}
 	/**
 	 * Constructores
 	 */
 
-	public Propiedades() {
-		// TODO Auto-generated constructor stub
-	}
 
 	/**
 	 * Metodos

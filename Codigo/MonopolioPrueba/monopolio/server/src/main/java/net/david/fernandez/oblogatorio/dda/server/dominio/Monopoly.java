@@ -6,7 +6,7 @@ public class Monopoly {
 	 * Atributos y Propiedades
 	 */
 
-	private Lugar[] board = new Lugar[40];
+	private Casilla[] board = new Casilla[40];
 
 	private Jugador JugadorActual;
 
@@ -21,9 +21,9 @@ public class Monopoly {
 	public Monopoly() {
 
 		board[0] = new Go();
-		board[1] = new Estate("Mediterranean Avenue", 60, 30, 2, "purple", 50, 50, 10, 30, 90, 160, 250);
-		board[2] = new Location("Community Chest");
-		board[3] = new Estate("Baltic Avenue", 60, 30, 4, "purple", 50, 50, 20, 60, 180, 320, 450);
+		board[1] = new Estate("Avenida Mediterranea", 60, 30, 2, 50, 50, 10, 30, 90, 160, 250);
+		board[2] = new Casilla("Cofre comunidad");
+		board[3] = new Estate("Baltic Avenue", 60, 30, 4, 50, 50, 20, 60, 180, 320, 450);
 		board[4] = new Tax("Income Tax", 200);
 		board[5] = new Railroad("Reading Railroad", 200, 100, 20);
 

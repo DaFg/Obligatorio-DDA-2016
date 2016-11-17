@@ -38,8 +38,8 @@ public class Casilla {
 	 * Constructores
 	 */
 
-	public Casilla(String nombre) {
-		this.Nombre=nombre;
+	public Casilla() {
+		// TODO Auto-generated constructor stub
 	}
 
 	/**

@@ -1,4 +1,4 @@
-package common;
+package net.david.fernandez.oblogatorio.dda.common;
 
 /**
  * Hello world!

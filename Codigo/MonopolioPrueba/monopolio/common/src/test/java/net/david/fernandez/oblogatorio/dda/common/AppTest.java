@@ -1,4 +1,4 @@
-package common;
+package net.david.fernandez.oblogatorio.dda.common;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

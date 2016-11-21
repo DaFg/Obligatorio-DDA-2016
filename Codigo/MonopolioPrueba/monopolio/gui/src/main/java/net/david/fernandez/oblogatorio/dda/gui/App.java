@@ -6,7 +6,7 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
-import net.david.fernandez.oblogatorio.dda.monopolio.Server;
+import net.david.fernandez.oblogatorio.dda.common.Server;
 
 /**
  * Hello world!

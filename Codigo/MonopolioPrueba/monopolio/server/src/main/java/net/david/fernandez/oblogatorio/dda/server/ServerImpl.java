@@ -2,7 +2,7 @@ package net.david.fernandez.oblogatorio.dda.server;
 
 import java.rmi.RemoteException;
 
-import net.david.fernandez.oblogatorio.dda.monopolio.Server;
+import net.david.fernandez.oblogatorio.dda.common.Server;
 import net.david.fernandez.oblogatorio.dda.server.dominio.Login;
 import net.david.fernandez.oblogatorio.dda.server.entities.LoginController;
 

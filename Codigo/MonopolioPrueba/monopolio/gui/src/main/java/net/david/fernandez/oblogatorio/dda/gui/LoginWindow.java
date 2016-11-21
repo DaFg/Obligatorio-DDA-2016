@@ -3,7 +3,7 @@ package net.david.fernandez.oblogatorio.dda.gui;
 import javax.swing.JFrame;
 import javax.swing.SpringLayout;
 
-import net.david.fernandez.oblogatorio.dda.monopolio.Server;
+import net.david.fernandez.oblogatorio.dda.common.Server;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;

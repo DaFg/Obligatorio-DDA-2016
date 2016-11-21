@@ -1,4 +1,4 @@
-package net.david.fernandez.oblogatorio.dda.monopolio;
+package net.david.fernandez.oblogatorio.dda.common;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

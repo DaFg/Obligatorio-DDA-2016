@@ -6,7 +6,7 @@ public class Monopoly {
 	 * Atributos y Propiedades
 	 */
 
-	private Casilla[] board = new Casilla[15];
+	private Casilla[] board = new Casilla[16];
 
 
 	public Monopoly() {

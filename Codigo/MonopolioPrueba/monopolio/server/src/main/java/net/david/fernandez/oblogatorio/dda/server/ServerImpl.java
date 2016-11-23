@@ -1,6 +1,8 @@
 package net.david.fernandez.oblogatorio.dda.server;
 
+import java.rmi.RMISecurityManager;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.List;
 
 import net.david.fernandez.oblogatorio.dda.common.LoginController;
@@ -14,10 +16,16 @@ public class ServerImpl implements Server {
 
 	private List<Observer> observers;
 
-	public ServerImpl() {
+	@SuppressWarnings("deprecation")
+	public ServerImpl () {
 		String path = "C:\\java.policy";
 		path = path.replace("\\", "/");
 		System.setProperty("java.security.policy", "file:///" + path);
+		if (System.getSecurityManager() == null) {
+			System.setSecurityManager(new RMISecurityManager());
+		}
+		
+		this.observers = new ArrayList<Observer>();
 	}
 
 	public void sendLogin(String n, char[] c) throws RemoteException {

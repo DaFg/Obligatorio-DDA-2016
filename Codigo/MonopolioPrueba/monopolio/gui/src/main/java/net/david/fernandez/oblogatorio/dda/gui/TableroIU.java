@@ -5,6 +5,8 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+
+import net.david.fernandez.oblogatorio.dda.common.Server;
 import net.miginfocom.swing.MigLayout;
 import java.awt.Color;
 import javax.swing.SpringLayout;
@@ -18,6 +20,23 @@ import java.awt.event.ActionEvent;
 public class TableroIU {
 
 	private JFrame frame;
+	private Server server;
+
+	public JFrame getFrame() {
+		return frame;
+	}
+
+	public void setFrame(JFrame frame) {
+		this.frame = frame;
+	}
+
+	public Server getServer() {
+		return server;
+	}
+
+	public void setServer(Server server) {
+		this.server = server;
+	}
 
 	/**
 	 * Launch the application.

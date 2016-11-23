@@ -92,8 +92,14 @@ public class LoginWindow {
 				try {
 					Jugador jugador = server.getLoginController().autenticar(username, password);
 					if(jugador != null) {
+						TableroIU tablero= new TableroIU();
+						tablero.getFrame().setVisible(true);
+						tablero.setServer(server);
 						// exito
 					} else {
+						TableroIU tablero= new TableroIU();
+						tablero.getFrame().setVisible(true);
+						tablero.setServer(server);
 						// no exito
 					}
 					//server.sendLogin(n, c);

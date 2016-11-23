@@ -1,6 +1,7 @@
 package net.david.fernandez.oblogatorio.dda.gui;
 
 import java.awt.EventQueue;
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -28,17 +29,20 @@ public class App extends UnicastRemoteObject {
 
 		System.setProperty("java.security.policy", "file:////java.policy");
 		final App app = this;
-
+		Registry registry = LocateRegistry.getRegistry(1099);
+		try {
+			ser = (Server) registry.lookup("ser");
+		} catch (NotBoundException e1) {
+			e1.printStackTrace();
+		}
 		EventQueue.invokeLater(new Runnable() {
-
 			public void run() {
 				try {
 					lw = new LoginWindow();
 					System.out.println("Hello World <--2-->");
-					Registry registry = LocateRegistry.getRegistry(1099);
-					ser = (Server) registry.lookup("ser");
 					lw.frmMonopolio.setVisible(true);
 					lw.setServer(ser);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

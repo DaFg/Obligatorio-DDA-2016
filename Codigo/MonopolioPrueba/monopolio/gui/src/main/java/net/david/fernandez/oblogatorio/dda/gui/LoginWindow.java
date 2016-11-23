@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.SpringLayout;
 
 import net.david.fernandez.oblogatorio.dda.common.Server;
+import net.david.fernandez.oblogatorio.dda.common.dto.Jugador;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -18,7 +19,7 @@ public class LoginWindow {
 	JFrame frmMonopolio;
 	private JTextField txtNombre;
 	private JPasswordField pFcontrasenia;
-	private Server ser;
+	private Server server;
 
 	/**
 	 * Launch the application.
@@ -83,13 +84,19 @@ public class LoginWindow {
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String n = txtNombre.getText();
-				char[] c = pFcontrasenia.getPassword();
+				String username = txtNombre.getText();
+				String password = pFcontrasenia.getPassword().toString();
 				System.out.println("Esto es lo que recivo del usuario po la GUI");
-				System.out.println(n);
-				System.out.println(c);
+				System.out.println(username);
+				System.out.println(password);
 				try {
-					ser.sendLogin(n, c);
+					Jugador jugador = server.getLoginController().autenticar(username, password);
+					if(jugador != null) {
+						// exito
+					} else {
+						// no exito
+					}
+					//server.sendLogin(n, c);
 				} catch (RemoteException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -103,6 +110,6 @@ public class LoginWindow {
 	}
 
 	public void setServer(Server ser) {
-		this.ser = ser;
+		this.server = ser;
 	}
 }

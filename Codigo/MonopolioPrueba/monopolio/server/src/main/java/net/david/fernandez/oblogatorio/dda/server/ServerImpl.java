@@ -1,12 +1,18 @@
 package net.david.fernandez.oblogatorio.dda.server;
 
 import java.rmi.RemoteException;
+import java.util.List;
 
+import net.david.fernandez.oblogatorio.dda.common.LoginController;
+import net.david.fernandez.oblogatorio.dda.common.Observer;
+import net.david.fernandez.oblogatorio.dda.common.PartidaController;
 import net.david.fernandez.oblogatorio.dda.common.Server;
+import net.david.fernandez.oblogatorio.dda.server.controller.LoginControllerImpl;
 import net.david.fernandez.oblogatorio.dda.server.dominio.Login;
-import net.david.fernandez.oblogatorio.dda.server.entities.LoginController;
 
 public class ServerImpl implements Server {
+
+	private List<Observer> observers;
 
 	public ServerImpl() {
 		String path = "C:\\java.policy";
@@ -24,9 +30,17 @@ public class ServerImpl implements Server {
 		lo.resivirLogin(n, c);
 	}
 
-	/*
-	 * public void sendLogin(String n, String string) throws RemoteException {
-	 * System.out.println(string); }
-	 */
+	public void addObserver(Observer observer) throws RemoteException {
+		this.observers.add(observer);
+	}
+
+	public LoginController getLoginController() throws RemoteException {
+		return LoginControllerImpl.getInstance();
+	}
+
+	public PartidaController getPartidaController() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

@@ -24,7 +24,7 @@ public class Partida extends Canvas implements Runnable{
 	private JPanel sidePanel;
 	private JPanel overPanel;
 	private Thread thread;
-	private ImagePanel panel;
+	//private ImagePanel panel;
 	private JButton newGame, buy, payRent, draw, nextTurn;
 	private JTextArea scoreBoard;
 

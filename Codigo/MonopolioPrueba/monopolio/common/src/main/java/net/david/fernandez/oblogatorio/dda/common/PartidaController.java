@@ -1,5 +1,7 @@
 package net.david.fernandez.oblogatorio.dda.common;
 
-public interface PartidaController {
+import java.rmi.Remote;
+
+public interface PartidaController extends Remote {
 
 }

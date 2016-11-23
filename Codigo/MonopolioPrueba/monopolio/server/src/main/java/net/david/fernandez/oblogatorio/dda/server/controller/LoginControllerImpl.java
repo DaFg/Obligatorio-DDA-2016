@@ -23,8 +23,9 @@ public class LoginControllerImpl extends UnicastRemoteObject implements LoginCon
 	}
 
 	public Jugador autenticar(String username, String password) throws RemoteException {
-		return null;
-		
+		Jugador jugador = new Jugador();
+		jugador.setId(25);
+		return jugador;
 	}
 
 

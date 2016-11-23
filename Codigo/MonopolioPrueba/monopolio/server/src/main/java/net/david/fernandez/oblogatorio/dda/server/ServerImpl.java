@@ -10,6 +10,7 @@ import net.david.fernandez.oblogatorio.dda.common.Observer;
 import net.david.fernandez.oblogatorio.dda.common.PartidaController;
 import net.david.fernandez.oblogatorio.dda.common.Server;
 import net.david.fernandez.oblogatorio.dda.server.controller.LoginControllerImpl;
+import net.david.fernandez.oblogatorio.dda.server.controller.PartidaControllerImpl;
 import net.david.fernandez.oblogatorio.dda.server.dominio.Login;
 
 public class ServerImpl implements Server {
@@ -46,9 +47,8 @@ public class ServerImpl implements Server {
 		return LoginControllerImpl.getInstance();
 	}
 
-	public PartidaController getPartidaController() {
-		// TODO Auto-generated method stub
-		return null;
+	public PartidaController getPartidaController() throws RemoteException {
+		return PartidaControllerImpl.getInstance();
 	}
 
 }

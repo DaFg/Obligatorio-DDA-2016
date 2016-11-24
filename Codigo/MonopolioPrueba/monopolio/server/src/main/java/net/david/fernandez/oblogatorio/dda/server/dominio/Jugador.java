@@ -11,6 +11,15 @@ public class Jugador {
 	private Boolean EnCarcel;
 	private int Movimientos;
 	private Propiedades ListPropiedades;
+	private int Id;
+	
+	public int getId() {
+		return Id;
+	}
+
+	public void setId(int id) {
+		Id = id;
+	}
 
 	public int getPosicion() {
 		return Posicion;

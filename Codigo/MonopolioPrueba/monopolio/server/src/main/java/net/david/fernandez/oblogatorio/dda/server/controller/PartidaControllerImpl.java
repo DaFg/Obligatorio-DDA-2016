@@ -20,5 +20,10 @@ public class PartidaControllerImpl extends UnicastRemoteObject implements Partid
 		super();
 	}
 
+	public void actualizar() throws RemoteException {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

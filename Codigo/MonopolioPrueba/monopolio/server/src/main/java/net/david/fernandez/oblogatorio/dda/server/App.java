@@ -23,7 +23,7 @@ public class App {
 		System.out.println("Hello World!<--App Server -->");
 
 		conecSer();
-		// conecDb();
+		//conecDb();
 
 	}
 
@@ -57,7 +57,7 @@ public class App {
 		System.out.println("Creo EM");
 		EntityManager em = (EntityManager) emf.createEntityManager();
 		System.out.println("Comienzo transaccion");
-		em.getTransaction().begin();
+		//em.getTransaction().begin();
 
 		/*System.out.println("Finalizo Transaccion");
 		em.getTransaction().commit();*/

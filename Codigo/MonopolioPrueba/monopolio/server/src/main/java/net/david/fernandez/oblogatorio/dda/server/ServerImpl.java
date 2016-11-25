@@ -6,16 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.david.fernandez.oblogatorio.dda.common.LoginController;
-import net.david.fernandez.oblogatorio.dda.common.Observer;
 import net.david.fernandez.oblogatorio.dda.common.PartidaController;
 import net.david.fernandez.oblogatorio.dda.common.Server;
+import net.david.fernandez.oblogatorio.dda.common.dto.Jugador;
 import net.david.fernandez.oblogatorio.dda.server.controller.LoginControllerImpl;
 import net.david.fernandez.oblogatorio.dda.server.controller.PartidaControllerImpl;
+
 import net.david.fernandez.oblogatorio.dda.server.dominio.Login;
 
 public class ServerImpl implements Server {
 
-	private List<Observer> observers;
+	private List<Jugador> jugadores;
 
 	@SuppressWarnings("deprecation")
 	public ServerImpl () {
@@ -26,7 +27,7 @@ public class ServerImpl implements Server {
 			System.setSecurityManager(new RMISecurityManager());
 		}
 		
-		this.observers = new ArrayList<Observer>();
+		this.jugadores = new ArrayList<Jugador>();
 	}
 
 	public void sendLogin(String n, char[] c) throws RemoteException {
@@ -39,9 +40,7 @@ public class ServerImpl implements Server {
 		lo.resivirLogin(n, c);
 	}
 
-	public void addObserver(Observer observer) throws RemoteException {
-		this.observers.add(observer);
-	}
+	
 
 	public LoginController getLoginController() throws RemoteException {
 		return LoginControllerImpl.getInstance();
@@ -50,5 +49,13 @@ public class ServerImpl implements Server {
 	public PartidaController getPartidaController() throws RemoteException {
 		return PartidaControllerImpl.getInstance();
 	}
+
+	public void addJugador(Jugador jugador) throws RemoteException {
+		this.jugadores.add(jugador);
+	}
+	
+
+	
+
 
 }

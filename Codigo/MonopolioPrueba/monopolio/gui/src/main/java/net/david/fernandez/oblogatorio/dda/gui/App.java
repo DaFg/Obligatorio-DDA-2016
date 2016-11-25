@@ -7,13 +7,14 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 
+import net.david.fernandez.oblogatorio.dda.common.PartidaController;
 import net.david.fernandez.oblogatorio.dda.common.Server;
 
 /**
  * Hello world!
  *
  */
-public class App extends UnicastRemoteObject {
+public class App extends UnicastRemoteObject implements PartidaController{
 
 	private Server ser;
 	private LoginWindow lw;
@@ -49,5 +50,9 @@ public class App extends UnicastRemoteObject {
 			}
 		});
 
+	}
+
+	public void actualizar() throws RemoteException {
+	 //--this.ser.send
 	}
 }

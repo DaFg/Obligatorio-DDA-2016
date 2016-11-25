@@ -47,19 +47,5 @@ public class App {
 		// ----0---0---0---0---0//
 	}
 
-	public static void conecDb() {
-		// --Desde aqui JPA--//
-		System.out.println("Comienza JPA");
-
-		EntityManagerFactory emf;
-		System.out.println("Creo EMF");
-		emf = Persistence.createEntityManagerFactory("jpaDS");
-		System.out.println("Creo EM");
-		EntityManager em = (EntityManager) emf.createEntityManager();
-		System.out.println("Comienzo transaccion");
-		em.getTransaction().begin();
-
-		/*System.out.println("Finalizo Transaccion");
-		em.getTransaction().commit();*/
-	}
+	
 }

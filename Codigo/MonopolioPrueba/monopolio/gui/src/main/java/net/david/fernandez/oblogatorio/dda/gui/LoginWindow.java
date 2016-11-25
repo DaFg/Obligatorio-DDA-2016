@@ -86,10 +86,12 @@ public class LoginWindow {
 			public void actionPerformed(ActionEvent e) {
 				String username = txtNombre.getText();
 				String password = pFcontrasenia.getPassword().toString();
+				char[] pass = password.toCharArray();
 				System.out.println("Esto es lo que recivo del usuario po la GUI");
 				System.out.println(username);
 				System.out.println(password);
 				try {
+					server.sendLogin(username, pass);//para enviar.//
 					Jugador jugador = server.getLoginController().autenticar(username, password);
 					if(jugador != null) {
 						TableroIU tablero= new TableroIU();
@@ -106,7 +108,6 @@ public class LoginWindow {
 						tablero.setServer(server);
 						// no exito
 					}
-					//server.sendLogin(n, c);
 				} catch (RemoteException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

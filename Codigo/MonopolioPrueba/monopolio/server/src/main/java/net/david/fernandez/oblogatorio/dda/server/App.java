@@ -11,6 +11,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import net.david.fernandez.oblogatorio.dda.common.Server;
+import net.david.fernandez.oblogatorio.dda.server.entities.JServicio;
 import net.david.fernandez.oblogatorio.dda.server.entities.LoginController;
 
 /**
@@ -23,6 +24,8 @@ public class App {
 		System.out.println("Hello World!<--App Server -->");
 
 		conecSer();
+		// JServicio js = new JServicio();
+		// js.LoginCorrecto();
 		// conecDb();
 
 	}
@@ -41,7 +44,9 @@ public class App {
 		// Bind the remote
 		// object's stub in the registry
 		Registry registry = LocateRegistry.getRegistry(1099);
-		registry.bind("ser", stub);
+		// registry.bind("server", stub);
+
+		conecDb();
 
 		System.out.println("Finaliza RMI");
 		// ----0---0---0---0---0//

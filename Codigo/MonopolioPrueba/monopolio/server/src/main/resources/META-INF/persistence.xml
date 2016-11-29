@@ -4,6 +4,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
 	version="1.0">
 	<persistence-unit name="jpaDS">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>net.david.fernandez.oblogatorio.dda.server.entities.LoginController</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>

@@ -96,7 +96,6 @@ public class LoginWindow {
 					if(jugador != null) {
 						TableroIU tablero= new TableroIU();
 						tablero.getFrame().setVisible(true);
-						
 						tablero.setServer(server);
 						frmMonopolio.setVisible(false);
 						// exito

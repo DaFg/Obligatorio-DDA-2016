@@ -6,5 +6,5 @@ import java.rmi.RemoteException;
 
 public interface PartidaController extends Remote, Serializable {
 	
-	public void actualizar() throws RemoteException;
+	public void recibirOpciones() throws RemoteException;
 }

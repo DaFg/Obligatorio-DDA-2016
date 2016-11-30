@@ -16,8 +16,9 @@ import net.david.fernandez.oblogatorio.dda.common.Server;
  */
 public class App extends UnicastRemoteObject implements PartidaController{
 
-	private Server ser;
+	private Server server;
 	private LoginWindow lw;
+	private TableroIU tablero;
 
 	public static void main(String[] args) throws RemoteException {
 		System.out.println("Hello World! <--App GUI-->");
@@ -32,7 +33,7 @@ public class App extends UnicastRemoteObject implements PartidaController{
 		final App app = this;
 		Registry registry = LocateRegistry.getRegistry(1099);
 		try {
-			ser = (Server) registry.lookup("ser");
+			server = (Server) registry.lookup("ser");
 		} catch (NotBoundException e1) {
 			e1.printStackTrace();
 		}
@@ -42,7 +43,7 @@ public class App extends UnicastRemoteObject implements PartidaController{
 					lw = new LoginWindow();
 					System.out.println("Hello World <--2-->");
 					lw.frmMonopolio.setVisible(true);
-					lw.setServer(ser);
+					lw.setServer(server);
 					
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -52,7 +53,7 @@ public class App extends UnicastRemoteObject implements PartidaController{
 
 	}
 
-	public void actualizar() throws RemoteException {
+	public void recibirOpciones() throws RemoteException {
 	 //--this.ser.send
 	}
 }

@@ -1,6 +1,6 @@
 package net.david.fernandez.oblogatorio.dda.server.dominio;
 
-public class Jugador {
+public class Jugador extends net.david.fernandez.oblogatorio.dda.common.dto.Jugador {
 
 	/**
 	 * Atributos y Propiedades
@@ -11,16 +11,25 @@ public class Jugador {
 	private Boolean EnCarcel;
 	private int Movimientos;
 	private Propiedades ListPropiedades;
-	private int Id;
+
+	/**
+	 * Constructores
+	 */
+	public Jugador() {
+		// TODO Auto-generated constructor stub
+	}
 	
-	public int getId() {
-		return Id;
+	/**
+	 * Metodos
+	 */
+	
+	public void ComprobarCompra() {
 	}
-
-	public void setId(int id) {
-		Id = id;
+	
+	public void ComprobarPosicion() {
+		
 	}
-
+	
 	public int getPosicion() {
 		return Posicion;
 	}
@@ -61,22 +70,4 @@ public class Jugador {
 		ListPropiedades = listPropiedades;
 	}
 
-	/**
-	 * Constructores
-	 */
-
-	public Jugador() {
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
-	 * Metodos
-	 */
-
-	public void ComprobarCompra() {
-	}
-
-	public void ComprobarPosicion() {
-
-	}
 }

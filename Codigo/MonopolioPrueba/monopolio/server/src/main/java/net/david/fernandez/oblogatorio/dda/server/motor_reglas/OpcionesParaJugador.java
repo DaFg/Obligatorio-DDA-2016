@@ -6,7 +6,7 @@ import java.util.List;
 public class OpcionesParaJugador {
 
 	private List<String> opciones;
-
+	
 	public OpcionesParaJugador() {
 		this.setOpciones(new ArrayList<String>());
 	}

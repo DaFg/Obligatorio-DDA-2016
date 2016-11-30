@@ -16,7 +16,7 @@ import net.david.fernandez.oblogatorio.dda.server.dominio.Login;
 
 @Entity
 @Table(name = "login")
-public class LoginController extends Login implements Serializable {
+public class User extends Login implements Serializable {
 
 	/**
 	 * 
@@ -30,7 +30,7 @@ public class LoginController extends Login implements Serializable {
 	private String Nombre;
 	private char[] Contrasenia;
 
-	public LoginController() {
+	public User() {
 
 	}
 

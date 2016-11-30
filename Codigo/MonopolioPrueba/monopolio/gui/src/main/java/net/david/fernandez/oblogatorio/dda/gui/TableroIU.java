@@ -7,7 +7,6 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 
 import net.david.fernandez.oblogatorio.dda.common.Server;
-import net.miginfocom.swing.MigLayout;
 import java.awt.Color;
 import javax.swing.SpringLayout;
 import java.awt.GridLayout;

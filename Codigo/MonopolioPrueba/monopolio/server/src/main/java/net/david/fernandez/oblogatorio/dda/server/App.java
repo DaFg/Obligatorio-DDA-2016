@@ -12,7 +12,7 @@ import javax.persistence.Persistence;
 
 import net.david.fernandez.oblogatorio.dda.common.Server;
 import net.david.fernandez.oblogatorio.dda.server.entities.JServicio;
-import net.david.fernandez.oblogatorio.dda.server.entities.LoginController;
+import net.david.fernandez.oblogatorio.dda.server.entities.User;
 
 /**
  * Hello world!

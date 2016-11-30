@@ -1,6 +1,6 @@
 package net.david.fernandez.oblogatorio.dda.server.dominio;
 
-import net.david.fernandez.oblogatorio.dda.server.entities.LoginController;
+import net.david.fernandez.oblogatorio.dda.server.entities.User;
 
 public class Login {
 
@@ -34,7 +34,7 @@ public class Login {
 		System.out.println(contrasenia);
 		System.out.println("Fin resivirLogin en Login");
 
-		LoginController logcontr = new LoginController();
+		User logcontr = new User();
 		logcontr.buscarLoguin(nombre, contrasenia);
 	}
 

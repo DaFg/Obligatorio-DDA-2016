@@ -4,8 +4,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
 	version="1.0">
 	<persistence-unit name="jpaDS">
-		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>net.david.fernandez.oblogatorio.dda.server.entities.LoginController</class>
+		<class>net.david.fernandez.oblogatorio.dda.server.entities.User</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/monopolio" />
@@ -13,11 +12,6 @@
 			<property name="javax.persistence.jdbc.password" value="monopolio" />
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
-
-			<!-- Se comento esta linea para que no destrulla y cree la bd cada vez 
-				que se coorre <property name="hibernate.hbm2ddl.auto" value="create-drop" 
-				/> -->
-
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
 		</properties>

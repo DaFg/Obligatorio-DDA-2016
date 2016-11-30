@@ -11,12 +11,12 @@ import net.david.fernandez.oblogatorio.dda.server.dominio.Login;
 
 public class JServicio {
 
-	public LoginController LoginCorrecto() {// (String nombre, char[]
+	public User LoginCorrecto() {// (String nombre, char[]
 											// contrasenia) {
 		// --Desde aqui JPA--//
 
 		System.out.println("Comienza JPA");
-		LoginController login = new LoginController();
+		User login = new User();
 		EntityManagerFactory emf;
 
 		System.out.println("Creo EMF");

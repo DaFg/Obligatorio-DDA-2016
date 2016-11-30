@@ -16,20 +16,20 @@
     </properties>
   <dependencies>
     <dependency>
-    	<groupId>org.hibernate.javax.persistence</groupId>
-    	<artifactId>hibernate-jpa-2.0-api</artifactId>
-    	<version>1.0.1.Final</version>
-    </dependency>
-    <dependency>
-    	<groupId>org.hibernate</groupId>
-    	<artifactId>hibernate-entitymanager</artifactId>
-    	<version>3.6.0.Final</version>
-    </dependency>
-    <dependency>
-    	<groupId>org.postgresql</groupId>
-    	<artifactId>postgresql</artifactId>
-    	<version>9.4.1211.jre7</version>
-    </dependency>
+		<groupId>org.postgresql</groupId>
+		<artifactId>postgresql</artifactId>
+		<version>9.4-1200-jdbc41</version>
+	</dependency>
+	<dependency>
+		<groupId>org.hibernate.javax.persistence</groupId>
+		<artifactId>hibernate-jpa-2.1-api</artifactId>
+		<version>LATEST</version>
+	</dependency>
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-entitymanager</artifactId>
+		<version>LATEST</version>
+	</dependency>
     <!-- LOGGIN -->
     <dependency>
     	<groupId>org.slf4j</groupId>
@@ -84,4 +84,5 @@
     	<version>0.0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
+ 
 </project>

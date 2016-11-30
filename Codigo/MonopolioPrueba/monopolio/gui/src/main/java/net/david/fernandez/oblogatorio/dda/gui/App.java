@@ -9,6 +9,7 @@ import java.rmi.server.UnicastRemoteObject;
 
 import net.david.fernandez.oblogatorio.dda.common.PartidaController;
 import net.david.fernandez.oblogatorio.dda.common.Server;
+import net.david.fernandez.oblogatorio.dda.common.dto.Jugador;
 
 /**
  * Hello world!
@@ -55,5 +56,11 @@ public class App extends UnicastRemoteObject implements PartidaController{
 
 	public void recibirOpciones() throws RemoteException {
 	 //--this.ser.send
+	}
+
+	@Override
+	public String notificarAccionDeJugador(Jugador jugador, String[] acciones) throws RemoteException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

@@ -5,6 +5,7 @@ import java.rmi.server.UnicastRemoteObject;
 
 import net.david.fernandez.oblogatorio.dda.common.LoginController;
 import net.david.fernandez.oblogatorio.dda.common.dto.Jugador;
+import net.david.fernandez.oblogatorio.dda.server.entities.JServicio;
 
 public class LoginControllerImpl extends UnicastRemoteObject implements LoginController {
 
@@ -12,7 +13,7 @@ public class LoginControllerImpl extends UnicastRemoteObject implements LoginCon
 	private static LoginController instance = null;
 
 	public static LoginController getInstance() throws RemoteException {
-		if(instance == null) {
+		if (instance == null) {
 			instance = new LoginControllerImpl();
 		}
 		return instance;
@@ -28,5 +29,15 @@ public class LoginControllerImpl extends UnicastRemoteObject implements LoginCon
 		return jugador;
 	}
 
+/*	public List<User> consulta() throws RemoteException{
+		
+		JServicio js = new JServicio();
+		js.conecDb();
+		
+		
+		String query = "select * from usuario";
+		Query emquery = em.
+		
+	}*/
 
 }

@@ -13,6 +13,7 @@ public class TestJPA {
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
 		User u = new User();
+		u.setNombre("David");
 		em.persist(u);
 		em.getTransaction().commit();
 	}

@@ -15,7 +15,7 @@ import net.david.fernandez.oblogatorio.dda.server.App;
 import net.david.fernandez.oblogatorio.dda.server.dominio.Login;
 
 @Entity
-@Table(name = "login")
+@Table(name = "Usuario")
 public class User extends Login implements Serializable {
 
 	/**
@@ -70,7 +70,7 @@ public class User extends Login implements Serializable {
 		System.out.println(contrasenia);
 		System.out.println("Fin resivirLogin en LoginController");
 
-		//conecDb();
+		// conecDb();
 
 	}
 
@@ -79,23 +79,18 @@ public class User extends Login implements Serializable {
 	 * pensar algun patron.
 	 */
 
-	/*public static void conecDb() {
-		// --Desde aqui JPA--//
-		System.out.println("Comienza JPA");
-
-		EntityManagerFactory emf;
-		System.out.println("Creo EMF");
-		emf = Persistence.createEntityManagerFactory("jpaDS");
-		System.out.println("Creo EM");
-		EntityManager em = (EntityManager) emf.createEntityManager();
-		System.out.println("Comienzo transaccion");
-		em.getTransaction().begin();
-		Login log = new Login();
-		Login l = em.find(Login.class, log.getNombre());
-		System.out.println("Finalizo Transaccion");
-		em.getTransaction().commit();
-	}*/
-	
-	
+	/*
+	 * public static void conecDb() { // --Desde aqui JPA--//
+	 * System.out.println("Comienza JPA");
+	 * 
+	 * EntityManagerFactory emf; System.out.println("Creo EMF"); emf =
+	 * Persistence.createEntityManagerFactory("jpaDS");
+	 * System.out.println("Creo EM"); EntityManager em = (EntityManager)
+	 * emf.createEntityManager(); System.out.println("Comienzo transaccion");
+	 * em.getTransaction().begin(); Login log = new Login(); Login l =
+	 * em.find(Login.class, log.getNombre());
+	 * System.out.println("Finalizo Transaccion"); em.getTransaction().commit();
+	 * }
+	 */
 
 }

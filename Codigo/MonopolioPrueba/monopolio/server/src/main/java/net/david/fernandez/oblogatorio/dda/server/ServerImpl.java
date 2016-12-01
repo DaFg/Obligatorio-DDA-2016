@@ -20,14 +20,20 @@ public class ServerImpl implements Server {
 	private List<Jugador> jugadores;
 
 	@SuppressWarnings("deprecation")
-	public ServerImpl () {
-		String path = "C:\\java.policy";
-		path = path.replace("\\", "/");
-		System.setProperty("java.security.policy", "file:///" + path);
+	public ServerImpl() {
+
+		System.out.println("Estoy en ServerImpl");
+
+		System.setProperty("java.security.policy", "file://c:/java.policy");
+
+		// String path = "C:\\java.policy";
+		// path = path.replace("\\", "/");
+		// ""file:///" + path);
+
 		if (System.getSecurityManager() == null) {
 			System.setSecurityManager(new RMISecurityManager());
 		}
-		
+
 		this.jugadores = new ArrayList<Jugador>();
 	}
 
@@ -35,13 +41,10 @@ public class ServerImpl implements Server {
 		System.out.println("Muestro lo que llega desde la GUI a ServerImpl");
 		System.out.println(n);
 		System.out.println(c);
-		
 
 		Login lo = new Login();
 		lo.resivirLogin(n, c);
 	}
-
-	
 
 	public LoginController getLoginController() throws RemoteException {
 		return LoginControllerImpl.getInstance();
@@ -54,9 +57,5 @@ public class ServerImpl implements Server {
 	public void addJugador(Jugador jugador) throws RemoteException {
 		this.jugadores.add(jugador);
 	}
-	
-
-	
-
 
 }

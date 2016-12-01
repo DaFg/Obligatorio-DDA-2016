@@ -21,12 +21,10 @@ import net.david.fernandez.oblogatorio.dda.server.entities.User;
 public class App {
 
 	public static void main(String[] args) throws RemoteException, AlreadyBoundException {
+
 		System.out.println("Hello World!<--App Server -->");
 
 		conecSer();
-		// JServicio js = new JServicio();
-		// js.LoginCorrecto();
-		// conecDb();
 
 	}
 
@@ -44,30 +42,28 @@ public class App {
 		// Bind the remote
 		// object's stub in the registry
 		Registry registry = LocateRegistry.getRegistry(1099);
-		// registry.bind("server", stub);
+		registry.bind("Server", stub);
 
-		conecDb();
+		JServicio js = new JServicio();
+		js.conecDb();
 
 		System.out.println("Finaliza RMI");
 		// ----0---0---0---0---0//
 	}
 
-	public static void conecDb() {
-		// --Desde aqui JPA--//
-		System.out.println("Comienza JPA");
-
-		EntityManagerFactory emf;
-		System.out.println("Creo EMF");
-		emf = Persistence.createEntityManagerFactory("jpaDS");
-		System.out.println("Creo EM");
-		EntityManager em = (EntityManager) emf.createEntityManager();
-		System.out.println("Comienzo transaccion");
-		// em.getTransaction().begin();
-
-		/*
-		 * System.out.println("Finalizo Transaccion");
-		 * em.getTransaction().commit();
-		 */
-	}
+	/*
+	 * public static void conecDb() { // --Desde aqui JPA--//
+	 * System.out.println("Comienza JPA");
+	 * 
+	 * EntityManagerFactory emf; System.out.println("Creo EMF"); emf =
+	 * Persistence.createEntityManagerFactory("jpaDS");
+	 * System.out.println("Creo EM"); EntityManager em = (EntityManager)
+	 * emf.createEntityManager(); System.out.println("Comienzo transaccion");
+	 * em.getTransaction().begin(); User u = new User(); u.setNombre("David");
+	 * // u.setId(2); em.persist(u); System.out.println("Finalizo Transaccion");
+	 * em.getTransaction().commit();
+	 * 
+	 * }
+	 */
 
 }

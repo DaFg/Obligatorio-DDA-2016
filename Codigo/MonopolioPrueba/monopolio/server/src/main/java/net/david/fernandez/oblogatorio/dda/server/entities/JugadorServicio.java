@@ -10,8 +10,24 @@ import javax.persistence.Query;
 import net.david.fernandez.oblogatorio.dda.server.dominio.Login;
 import net.david.fernandez.oblogatorio.dda.server.entities.User;
 
-public class JServicio {
+public class JugadorServicio {
 
+	public List<User> getUsuarios() {
+		EntityManager em = ConnectionFactory.getInstance().getEntityManager();
+		Query query = em.createQuery("SELECT u FROM User u");
+		@SuppressWarnings("unchecked")
+		List<User> usuarios = query.getResultList();
+		return usuarios;
+	}
+	
+	public User getUsuario(String nombre) {
+		EntityManager em = ConnectionFactory.getInstance().getEntityManager();
+		Query query = em.createQuery("SELECT u FROM User u WHERE nombre = :nombre");
+		query.setParameter("nombre", nombre);
+		@SuppressWarnings("unchecked")
+		User usuario = (User) query.getSingleResult();
+		return usuario;
+	}
 	
 	public void conecDb() {
 
@@ -22,13 +38,7 @@ public class JServicio {
 		// --Desde aqui JPA--//
 		System.out.println("Comienza JPA");
 
-		EntityManagerFactory emf;
-		System.out.println("Creo EMF");
-		emf = Persistence.createEntityManagerFactory("jpaDS");
-		System.out.println("Creo EM");
-		EntityManager em = (EntityManager) emf.createEntityManager();
-		System.out.println("Comienzo transaccion");
-		
+		EntityManager em = ConnectionFactory.getInstance().getEntityManager();
 		/*
 		 * em.getTransaction().begin(); User u = new User();
 		 * u.setNombre("David"); // u.setId(2); em.persist(u);

@@ -11,7 +11,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import net.david.fernandez.oblogatorio.dda.common.Server;
-import net.david.fernandez.oblogatorio.dda.server.entities.JServicio;
+import net.david.fernandez.oblogatorio.dda.server.entities.JugadorServicio;
 import net.david.fernandez.oblogatorio.dda.server.entities.User;
 
 /**
@@ -44,7 +44,7 @@ public class App {
 		Registry registry = LocateRegistry.getRegistry(1099);
 		registry.bind("Server", stub);
 
-		JServicio js = new JServicio();
+		JugadorServicio js = new JugadorServicio();
 		js.conecDb();
 
 		System.out.println("Finaliza RMI");

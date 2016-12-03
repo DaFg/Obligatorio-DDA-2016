@@ -5,7 +5,7 @@ import java.rmi.server.UnicastRemoteObject;
 
 import net.david.fernandez.oblogatorio.dda.common.LoginController;
 import net.david.fernandez.oblogatorio.dda.common.dto.Jugador;
-import net.david.fernandez.oblogatorio.dda.server.entities.JServicio;
+import net.david.fernandez.oblogatorio.dda.server.entities.JugadorServicio;
 
 public class LoginControllerImpl extends UnicastRemoteObject implements LoginController {
 

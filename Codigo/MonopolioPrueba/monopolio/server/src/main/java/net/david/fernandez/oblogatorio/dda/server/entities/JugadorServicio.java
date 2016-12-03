@@ -13,38 +13,50 @@ import net.david.fernandez.oblogatorio.dda.server.entities.User;
 public class JugadorServicio {
 
 	public List<User> getUsuarios() {
+		System.out.println("Entro en JugadorServicio");
+		System.out.println("Entro en getUsuario List");
 		EntityManager em = ConnectionFactory.getInstance().getEntityManager();
 		Query query = em.createQuery("SELECT u FROM User u");
 		@SuppressWarnings("unchecked")
 		List<User> usuarios = query.getResultList();
+		for (User user : usuarios) {
+			System.out.println(user.getId());
+			System.out.println(user.getNombre());
+			System.out.println(user.getContrasenia());
+		}
 		return usuarios;
 	}
-	
+
 	public User getUsuario(String nombre) {
+		System.out.println("Entro en JugadorServicio");
+		System.out.println("Entro en getUsurio Usuario");
 		EntityManager em = ConnectionFactory.getInstance().getEntityManager();
 		Query query = em.createQuery("SELECT u FROM User u WHERE nombre = :nombre");
 		query.setParameter("nombre", nombre);
 		@SuppressWarnings("unchecked")
 		User usuario = (User) query.getSingleResult();
+		System.out.println(usuario.getId());
+		System.out.println(usuario.getNombre());
+		System.out.println(usuario.getContrasenia());
 		return usuario;
 	}
-	
-	public void conecDb() {
 
-		/*
-		 * TODO Crear conecDB como Factory singleton	
-		 */
-		
+	public void setUsuario() {
 		// --Desde aqui JPA--//
+		System.out.println("Entro en JugadorServicio");
+		System.out.println("Entro en setUsuario");
 		System.out.println("Comienza JPA");
-
 		EntityManager em = ConnectionFactory.getInstance().getEntityManager();
-		/*
-		 * em.getTransaction().begin(); User u = new User();
-		 * u.setNombre("David"); // u.setId(2); em.persist(u);
-		 * System.out.println("Finalizo // Transaccion");
-		 * em.getTransaction().commit();
-		 */
+		em.getTransaction().begin();
+		User u = new User();
+		u.setId(1);
+		u.setNombre("Gamarra");
+		/*String con = "gamarra";
+		char[] con_arr = con.toCharArray();
+		u.setContrasenia(con_arr);*/
+		em.persist(u);
+		System.out.println("Finalizo // Transaccion");
+		em.getTransaction().commit();
 
 	}
 

@@ -63,14 +63,12 @@ public class User extends Login implements Serializable {
 		/*
 		 * Busco el usuario y verifico la contraseñ que me envian de ServerImpl.
 		 */
-		// App.conecDb();
 
 		System.out.println("Muestro lo que llega desde Login a LoginController");
 		System.out.println(nombre);
 		System.out.println(contrasenia);
-		System.out.println("Fin resivirLogin en LoginController");
+		System.out.println("Fin resivir Login en LoginController");
 
-		// conecDb();
 
 	}
 

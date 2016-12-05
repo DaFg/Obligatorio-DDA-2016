@@ -45,9 +45,9 @@ public class App {
 		registry.bind("Server", stub);
 
 		JugadorServicio js = new JugadorServicio();
-		js.setUsuario();
-		// js.getUsuario("David");
-		// js.getUsuarios();
+		// js.setUsuario();
+		js.getUsuario("David");
+		js.getUsuarios();
 
 		System.out.println("Finaliza RMI");
 		// ----0---0---0---0---0//

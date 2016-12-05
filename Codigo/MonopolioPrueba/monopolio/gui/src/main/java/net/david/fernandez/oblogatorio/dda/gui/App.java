@@ -34,7 +34,7 @@ public class App extends UnicastRemoteObject implements PartidaController{
 		final App app = this;
 		Registry registry = LocateRegistry.getRegistry(1099);
 		try {
-			server = (Server) registry.lookup("ser");
+			server = (Server) registry.lookup("Server");
 		} catch (NotBoundException e1) {
 			e1.printStackTrace();
 		}

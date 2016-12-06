@@ -1,15 +1,16 @@
 package net.david.fernandez.oblogatorio.dda.server.dominio;
 
-public class Monopoly {
+import java.util.ArrayList;
+import java.util.List;
 
-	/**
-	 * Atributos y Propiedades
-	 */
+import net.david.fernandez.oblogatorio.dda.common.dto.Jugador;
+
+public class Tablero {
 
 	private Casilla[] board = new Casilla[16];
+	private List<Jugador> jugadores = null;
 
-
-	public Monopoly() {
+	public Tablero() {
 
 		board[0] = new Go();
 		board[1] = new Estate("Avenida Mediterranea", 60, 30, 2, 50, 50, 10, 30, 90, 160, 250);
@@ -27,29 +28,32 @@ public class Monopoly {
 		board[11] = new Estate("Avenida Indiana", 220, 110, 18, 150, 150, 90, 250, 700, 875, 1050);
 		board[12] = new GoToJail();
 
-		
 		board[13] = new Estate("Avenida Pacifico", 300, 150, 26, 200, 200, 130, 390, 900, 1100, 1275);
 		board[14] = new Estate("Avenida Carolina del Norte", 300, 150, 26, 200, 200, 130, 390, 900, 1100, 1275);
 		board[15] = new Estate("Avenida Pennsylvania ", 320, 160, 28, 200, 200, 150, 450, 1000, 1200, 1400);
-		
+
+		this.jugadores = new ArrayList<Jugador>();
+
 	}
 
-	/**
-	 * Constructores
-	 */
+	public Casilla[] getBoard() {
+		return board;
+	}
 
-	/**
-	 * Metodos
-	 */
+	public void setBoard(Casilla[] board) {
+		this.board = board;
+	}
+
+	public List<Jugador> getJugadores() {
+		return jugadores;
+	}
+
+	public void setJugadores(List<Jugador> jugadores) {
+		this.jugadores = jugadores;
+	}
 
 	public Casilla getLocation(int num) {
 		return board[num];
 	}
-
-	/*
-	 * public static void main(String[] args){ Board b = new Board(); for(int i
-	 * = 0 ; i< 40; i++){ Location l = b.getLocation(i); if(l instanceof
-	 * Property){ System.out.println(((Property) l).getRent()); } } }
-	 */
 
 }

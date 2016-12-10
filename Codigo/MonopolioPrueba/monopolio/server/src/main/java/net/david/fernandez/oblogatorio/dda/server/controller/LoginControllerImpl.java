@@ -23,9 +23,11 @@ public class LoginControllerImpl extends UnicastRemoteObject implements LoginCon
 		super();
 	}
 
-	public Jugador autenticar(String username, String password) throws RemoteException {
+	public Jugador autenticar(String username, char[] password) throws RemoteException {
 		JugadorServicio js = new JugadorServicio();
 		// js.getUsuario(username);
+
+		js.getUsuario(username, password);
 
 		Jugador jugador = new Jugador();
 		// jugador.setId(25);

@@ -20,6 +20,8 @@ import net.david.fernandez.oblogatorio.dda.server.entities.User;
  */
 public class App {
 
+	private static char[] david;
+
 	public static void main(String[] args) throws RemoteException, AlreadyBoundException {
 
 		System.out.println("Hello World!<--App Server -->");
@@ -46,8 +48,10 @@ public class App {
 
 		JugadorServicio js = new JugadorServicio();
 		// js.setUsuario();
-		js.getUsuario("David");
-		//js.getUsuarios();
+
+		js.getUsuario("David", "yo");
+		// js.getUsuario("David");
+		// js.getUsuarios();
 
 		System.out.println("Finaliza RMI");
 		// ----0---0---0---0---0//

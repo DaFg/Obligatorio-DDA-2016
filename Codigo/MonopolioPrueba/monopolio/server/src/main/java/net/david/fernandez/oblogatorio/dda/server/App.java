@@ -47,7 +47,7 @@ public class App {
 		JugadorServicio js = new JugadorServicio();
 		// js.setUsuario();
 		js.getUsuario("David");
-		js.getUsuarios();
+		//js.getUsuarios();
 
 		System.out.println("Finaliza RMI");
 		// ----0---0---0---0---0//

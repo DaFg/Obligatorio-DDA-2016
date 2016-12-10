@@ -31,12 +31,15 @@ public class PartidaControllerImpl extends UnicastRemoteObject implements Partid
 		// notificar a jugadores
 	}
 	
+
 	@Override
 	public String notificarAccionDeJugador(Jugador jugador, String[] acciones) throws RemoteException {
+		// TODO Auto-generated method stub
 		// TODO revisar parametros que recibe esta funcion - lo actual es ejemplo
-		// 1 recorrer los observadores
-		// 2 enviar la jugada que hizo el jugador
-		// 3 enviar el nuevo (puede ser el mismo) jugador con turno junto con las acciones diponibles que tiene para hacer
+				// 1 recorrer los observadores
+				// 2 enviar la jugada que hizo el jugador
+				// 3 enviar el nuevo (puede ser el mismo) jugador con turno junto con las acciones diponibles que tiene para hacer
+				
 		return null;
 	}
 

@@ -13,7 +13,7 @@ import net.david.fernandez.oblogatorio.dda.server.imports.AlQueue;
 public class Partida extends Canvas implements Runnable{
 
 	private static final long serialVersionUID=1L;
-	public Monopoly board;
+	public Tablero board;
 	private AlQueue<Jugador> jugadores;
 	private Suerte suerte;
 	private Comunidad comunidad;
@@ -25,6 +25,7 @@ public class Partida extends Canvas implements Runnable{
 	private JPanel overPanel;
 	private Thread thread;
 	//private ImagePanel panel;
+	@SuppressWarnings("unused")
 	private JButton newGame, buy, payRent, draw, nextTurn;
 	private JTextArea scoreBoard;
 

@@ -2,17 +2,14 @@ package net.david.fernandez.oblogatorio.dda.server.motor_reglas;
 
 public class ReglasFactory {
 
-	public static Regla crear() {
-		
-	}
-
+	
 	public static void main(String[] args) {
 
-		Regla r = ReglasFactory.crear();
+		//Regla r = ReglasFactory.crear();
 		OpcionesParaElJugador opcionesParaJugador = new OpcionesParaElJugador();
 		
 		Opcion h = Opcion.A;
-		r.accion(opcionesParaJugador, jugadaDelCliente);
+		//r.accion(opcionesParaJugador, jugadaDelCliente);
 
 		if (h == Opcion.A) {
 

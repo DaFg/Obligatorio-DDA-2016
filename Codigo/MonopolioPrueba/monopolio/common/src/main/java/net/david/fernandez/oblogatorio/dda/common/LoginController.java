@@ -8,4 +8,5 @@ import net.david.fernandez.oblogatorio.dda.common.dto.Jugador;
 public interface LoginController extends Remote {
 
 	public Jugador autenticar(String username, String password) throws RemoteException;
+	
 }

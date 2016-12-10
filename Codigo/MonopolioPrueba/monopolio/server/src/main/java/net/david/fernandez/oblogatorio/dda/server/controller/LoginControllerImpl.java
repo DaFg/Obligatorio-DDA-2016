@@ -19,28 +19,17 @@ public class LoginControllerImpl extends UnicastRemoteObject implements LoginCon
 		return instance;
 	}
 
-	private LoginControllerImpl() throws RemoteException {
+	public LoginControllerImpl() throws RemoteException {
 		super();
 	}
 
 	public Jugador autenticar(String username, String password) throws RemoteException {
 		JugadorServicio js = new JugadorServicio();
-		// js.getUsuario(username);
-
+	
 		Jugador jugador = new Jugador();
-		// jugador.setId(25);
 		return jugador;
 	}
 
-	/*
-	 * public List<User> consulta() throws RemoteException{
-	 * 
-	 * JServicio js = new JServicio(); js.conecDb();
-	 * 
-	 * 
-	 * String query = "select * from usuario"; Query emquery = em.
-	 * 
-	 * }
-	 */
+	
 
 }

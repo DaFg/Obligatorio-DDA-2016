@@ -1,5 +1,7 @@
 package net.david.fernandez.oblogatorio.dda.server.dominio;
 
+import net.david.fernandez.oblogatorio.dda.common.dto.Jugador;
+
 public class Casilla {
 
 	/**
@@ -9,6 +11,11 @@ public class Casilla {
 	private String Tipo;
 	private String Nombre;
 	private int Posicion;
+	private Jugador jugadorActual;
+
+	public Casilla(String nombre) {
+		this.Nombre=nombre;
+	}
 
 	public String getTipo() {
 		return Tipo;
@@ -34,16 +41,12 @@ public class Casilla {
 		Posicion = posicion;
 	}
 
-	/**
-	 * Constructores
-	 */
-
-	public Casilla(String nombre) {
-		this.Nombre=nombre;
+	public Jugador getJugadorActual() {
+		return jugadorActual;
 	}
 
-	/**
-	 * Metodos
-	 */
-
+	public void setJugadorActual(Jugador jugadorActual) {
+		this.jugadorActual = jugadorActual;
+	}
+	
 }

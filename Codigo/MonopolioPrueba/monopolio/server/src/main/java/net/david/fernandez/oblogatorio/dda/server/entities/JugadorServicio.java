@@ -7,10 +7,17 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import net.david.fernandez.oblogatorio.dda.common.dto.Jugador;
 import net.david.fernandez.oblogatorio.dda.server.dominio.Login;
 import net.david.fernandez.oblogatorio.dda.server.entities.User;
 
 public class JugadorServicio {
+	
+	private static final JugadorServicio instance= new JugadorServicio();
+	
+	public JugadorServicio getInstance(){
+		return instance;
+	}
 
 	public List<User> getUsuarios() {
 		System.out.println("Entro en JugadorServicio");
@@ -41,7 +48,7 @@ public class JugadorServicio {
 		return usuario;
 	}
 
-	public User getUsuario(String nombre, String contrasenia) {
+	public Jugador getUsuario(String nombre, String contrasenia) {
 		System.out.println("Entro en JugadorServicio");
 		System.out.println("Entro en getUsurio Usuario");
 		EntityManager em = ConnectionFactory.getInstance().getEntityManager();
@@ -49,10 +56,10 @@ public class JugadorServicio {
 		query.setParameter("nombre", nombre);
 		query.setParameter("contrasenia", contrasenia);
 		@SuppressWarnings("unchecked")
-		User usuario = (User) query.getSingleResult();
+		Jugador usuario = (Jugador) query.getSingleResult();
 		System.out.println(usuario.getId());
 		System.out.println(usuario.getNombre());
-		System.out.println(usuario.getContrasenia());
+		System.out.println(usuario.getPassword());
 		return usuario;
 	}
 

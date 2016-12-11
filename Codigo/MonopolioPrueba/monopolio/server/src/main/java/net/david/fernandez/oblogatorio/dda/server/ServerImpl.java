@@ -5,6 +5,7 @@ import java.rmi.RMISecurityManager;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 import net.david.fernandez.oblogatorio.dda.common.LoginController;
 import net.david.fernandez.oblogatorio.dda.common.MarcaEsObservable;
@@ -18,21 +19,21 @@ import net.david.fernandez.oblogatorio.dda.server.dominio.Login;
 
 public class ServerImpl implements Server {
 
-	private List<Jugador> jugadores;
+	private List<MarcaEsObservable> jugadores;
 	private LoginController loginController;
 	private PartidaController partidaController;
 	
 	@SuppressWarnings("deprecation")
-	public ServerImpl() {
+	public ServerImpl() throws RemoteException {
 		System.out.println("Estoy en ServerImpl");
 		System.setProperty("java.security.policy", "file://c:/java.policy");
 		
 		if (System.getSecurityManager() == null) {
 			System.setSecurityManager(new RMISecurityManager());
 		}
-		this.jugadores = new ArrayList<Jugador>();
+		this.jugadores = new ArrayList<MarcaEsObservable>();
 		this.loginController = new LoginControllerImpl();
-		this.partidaController = new PartidaControllerImpl()
+		this.partidaController = new PartidaControllerImpl();
 	}
 
 	public void sendLogin(String n, char[] c) throws RemoteException {
@@ -49,47 +50,45 @@ public class ServerImpl implements Server {
 	}
 
 	public PartidaController getPartidaController() throws RemoteException {
-		return PartidaControllerImpl.getInstance();
-	}
-
-	public void addJugador(Jugador jugador) throws RemoteException {
-		this.jugadores.add(jugador);
+		return partidaController;
 	}
 
 	@Override
 	public List<MarcaEsObservable> getObservers() throws RemoteException {
-		// TODO Auto-generated method stub
-		return null;
+		return this.jugadores;
 	}
 
 	@Override
 	public void sendMessage(String message) throws RemoteException {
-		// TODO Auto-generated method stub
-		
+		for(MarcaEsObservable o: this.jugadores)
+		{
+			o.notificar(message);
+		}
 	}
 
 	@Override
 	public int tirarDado() throws RemoteException {
-		// TODO Auto-generated method stub
-		return 0;
+		return ThreadLocalRandom.current().nextInt(1,7);
 	}
 
 	@Override
 	public void addObserver(MarcaEsObservable observer) throws RemoteException {
-		// TODO Auto-generated method stub
-		
+		this.jugadores.add(observer);
 	}
 
 	@Override
 	public void setJugador(Jugador jugador) throws RemoteException {
-		// TODO Auto-generated method stub
-		
+		for(MarcaEsObservable o : this.jugadores)
+		{
+			o.setJugador(jugador);
+		}
 	}
 
 	@Override
 	public void pagarMulta(Jugador dueño, int cantidad) throws RemoteException {
-		// TODO Auto-generated method stub
-		
+		for(MarcaEsObservable o: this.jugadores){
+			o.pagarMulta(dueño, cantidad);
+		}
 	}
 
 }

@@ -8,7 +8,7 @@ import net.david.fernandez.oblogatorio.dda.common.dto.Jugador;
 
 public interface Server extends Remote {
 
-	public void sendLogin(String string, char[] c) throws RemoteException;
+	public void sendLogin(String string, String c) throws RemoteException;
 	
 	public List<MarcaEsObservable> getObservers() throws RemoteException;
 	

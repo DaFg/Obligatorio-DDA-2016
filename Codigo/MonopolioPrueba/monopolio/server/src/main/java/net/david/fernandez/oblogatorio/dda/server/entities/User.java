@@ -58,7 +58,7 @@ public class User extends Login implements Serializable {
 		Contrasenia = contrasenia;
 	}
 
-	public void buscarLoguin(String nombre, char[] contrasenia) {
+	public void buscarLoguin(String nombre, String contrasenia) {
 
 		/*
 		 * Busco el usuario y verifico la contraseñ que me envian de ServerImpl.

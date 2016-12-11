@@ -36,7 +36,7 @@ public class ServerImpl implements Server {
 		this.partidaController = new PartidaControllerImpl();
 	}
 
-	public void sendLogin(String n, char[] c) throws RemoteException {
+	public void sendLogin(String n, String c) throws RemoteException {
 		System.out.println("Muestro lo que llega desde la GUI a ServerImpl");
 		System.out.println(n);
 		System.out.println(c);

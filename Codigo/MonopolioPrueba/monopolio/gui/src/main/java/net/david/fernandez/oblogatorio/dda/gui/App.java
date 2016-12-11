@@ -6,7 +6,9 @@ import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.List;
 
+import net.david.fernandez.oblogatorio.dda.common.MarcaEsObservable;
 import net.david.fernandez.oblogatorio.dda.common.PartidaController;
 import net.david.fernandez.oblogatorio.dda.common.Server;
 import net.david.fernandez.oblogatorio.dda.common.dto.Jugador;
@@ -59,8 +61,50 @@ public class App extends UnicastRemoteObject implements PartidaController{
 	}
 
 	@Override
-	public String notificarAccionDeJugador(Jugador jugador, String[] acciones) throws RemoteException {
+	public void agregarJugador(Jugador jugador) throws RemoteException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void agregarObserver(MarcaEsObservable observer) throws RemoteException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Jugador> darJugadoresEnPartida() throws RemoteException {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void accion(Jugador jugador, String accion, boolean dueño) throws RemoteException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void empezarPartida() throws RemoteException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void actualizarPosicionJugador(int posAnterior, int jugadorPos, int posicion) throws RemoteException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void cambiarTurno(int jugPos) throws RemoteException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void comprarPropiedad(Jugador jugador, int posicion) throws RemoteException {
+		// TODO Auto-generated method stub
+		
 	}
 }

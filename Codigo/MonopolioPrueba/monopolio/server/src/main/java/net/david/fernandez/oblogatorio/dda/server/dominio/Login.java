@@ -27,7 +27,7 @@ public class Login {
 		Contrasenia = contrasenia;
 	}
 
-	public void resivirLogin(String nombre, char[] contrasenia) {
+	public void resivirLogin(String nombre, String contrasenia) {
 
 		System.out.println("Muestro lo que llega desde ServerImpl a Login");
 		System.out.println(nombre);

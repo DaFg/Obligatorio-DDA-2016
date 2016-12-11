@@ -86,12 +86,12 @@ public class LoginWindow {
 			public void actionPerformed(ActionEvent e) {
 				String username = txtNombre.getText();
 				String password = pFcontrasenia.getPassword().toString();
-				char[] pass = password.toCharArray();
+				//char[] pass = password.toCharArray();
 				System.out.println("Esto es lo que recivo del usuario po la GUI");
 				System.out.println(username);
 				System.out.println(password);
 				try {
-					server.sendLogin(username, pass);//para enviar.//
+					server.sendLogin(username, password);//para enviar.//
 					Jugador jugador = server.getLoginController().autenticar(username, password);
 					if(jugador != null) {
 						TableroIU tablero= new TableroIU();

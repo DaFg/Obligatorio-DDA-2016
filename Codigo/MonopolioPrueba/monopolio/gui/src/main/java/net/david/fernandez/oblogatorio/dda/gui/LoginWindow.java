@@ -2,6 +2,7 @@ package net.david.fernandez.oblogatorio.dda.gui;
 
 import javax.swing.JFrame;
 import javax.swing.SpringLayout;
+import javax.swing.text.Keymap;
 
 import net.david.fernandez.oblogatorio.dda.common.Server;
 import net.david.fernandez.oblogatorio.dda.common.dto.Jugador;
@@ -85,14 +86,15 @@ public class LoginWindow {
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String username = txtNombre.getText();
-				String password = pFcontrasenia.getPassword().toString();
-				//char[] pass = password.toCharArray();
+				//String password = pFcontrasenia.getPassword().toString();
+				String p = pFcontrasenia.getText();
+				//char[] pass = pFcontrasenia.getPassword().toString();
 				System.out.println("Esto es lo que recivo del usuario po la GUI");
 				System.out.println(username);
-				System.out.println(password);
+				System.out.println(p);
 				try {
-					server.sendLogin(username, password);//para enviar.//
-					Jugador jugador = server.getLoginController().autenticar(username, password);
+					server.sendLogin(username, p);//para enviar.//
+					Jugador jugador = server.getLoginController().autenticar(username, p);
 					if(jugador != null) {
 						TableroIU tablero= new TableroIU();
 						tablero.getFrame().setVisible(true);

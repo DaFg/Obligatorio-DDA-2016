@@ -69,7 +69,6 @@ public class User extends Login implements Serializable {
 		System.out.println(contrasenia);
 		System.out.println("Fin resivir Login en LoginController");
 
-
 	}
 
 	/*

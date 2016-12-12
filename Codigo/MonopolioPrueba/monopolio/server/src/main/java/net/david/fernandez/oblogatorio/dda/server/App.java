@@ -46,9 +46,9 @@ public class App {
 		Registry registry = LocateRegistry.getRegistry(1099);
 		registry.bind("Server", stub);
 
-		//JugadorServicio js = new JugadorServicio();
+		JugadorServicio js = new JugadorServicio();
 		// js.setUsuario();
-		//js.getUsuario("David", "yo");
+		js.getUsuario("David", "david");
 		// js.getUsuario("David");
 		// js.getUsuarios();
 

@@ -1,6 +1,7 @@
 package net.david.fernandez.oblogatorio.dda.server.entities;
 
 import java.io.Serializable;
+import java.rmi.Remote;
 
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;

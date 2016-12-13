@@ -98,12 +98,7 @@ public class LoginWindow {
 					// Jugador jugador =
 					// server.getLoginController().autenticar(username, p);
 					System.out.println("Estoy en el boton login");
-					// UsuarioCom jugador =
-					// server.getLoginController().autenticarUS(username, p);
-					Jugador jugador = server.getLoginController().autenticar(username, p);
-					// User jugador =
-					// server.getLoginController().autenticarU(username,
-					// p);
+					Jugador jugador = (Jugador) server.getLoginController().autenticarUS(username, p);
 					System.out.println("Estoy en el boton login 2");
 					if (jugador != null) {
 						TableroIU tablero = new TableroIU();

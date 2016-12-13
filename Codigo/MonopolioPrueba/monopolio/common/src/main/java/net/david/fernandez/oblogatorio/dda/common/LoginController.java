@@ -10,5 +10,5 @@ public interface LoginController extends Remote {
 
 	public Jugador autenticar(String username, String password) throws RemoteException;
 
-	//public UsuarioCom autenticarUS(String username, String password) throws RemoteException;
+	public Object autenticarUS(String username, String password) throws RemoteException;
 }

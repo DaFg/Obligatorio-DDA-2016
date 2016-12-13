@@ -39,19 +39,18 @@ public class App {
 		LocateRegistry.createRegistry(1099);
 		ServerImpl obj = new ServerImpl();
 		Server stub = (Server) UnicastRemoteObject.exportObject(obj, 0);
-		// Bind the remote
-		// object's stub in the registry
+		// Bind the remote object's stub in the registry
 		Registry registry = LocateRegistry.getRegistry(1099);
 		registry.bind("Server", stub);
 
-		JugadorServicio js = new JugadorServicio();
-		js.getDatosUsuario("Alfonso", "alfonso");
+		//JugadorServicio js = new JugadorServicio();
+		//js.getDatosUsuario("Alfonso", "alfonso");
 		// js.setUsuario();
 		 //js.getUsuario("David", "david");
 		// js.getUsuario("David");
 		// js.getUsuarios();
 
-		System.out.println("Finaliza RMI");
+		System.out.println("Server Redy - Finaliza RMI");
 		// ----0---0---0---0---0//
 	}
 

@@ -32,7 +32,8 @@ public class App extends UnicastRemoteObject implements PartidaController{
 
 	public App() throws RemoteException {
 
-		System.setProperty("java.security.policy", "file:////java.policy");
+		//System.setProperty("java.security.policy", "file:////java.policy");
+		System.setProperty("java.security.policy", "file://c:/java.policy");
 		final App app = this;
 		Registry registry = LocateRegistry.getRegistry(1099);
 		try {

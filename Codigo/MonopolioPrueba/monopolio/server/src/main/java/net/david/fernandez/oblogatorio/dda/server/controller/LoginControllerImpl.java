@@ -38,10 +38,12 @@ public class LoginControllerImpl extends UnicastRemoteObject implements LoginCon
 		return juga;
 	}
 
-	/*public UsuarioCom autenticarUS(String username, String password) throws RemoteException {
+	
+
+	public Object autenticarUS(String username, String password) throws RemoteException {
 		System.out.println("Estoy en autenticar dentro de loginControllerImpl.");
-		UsuarioCom js = new JugadorServicio().getInstance().getDatosUsuario(username, password);
+		Object js = new JugadorServicio().getInstance().getDatosUsuario(username, password);
 		return js;
-	}*/
+	}
 
 }

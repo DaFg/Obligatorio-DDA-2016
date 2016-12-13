@@ -46,6 +46,7 @@ public class ServerImpl implements Server {
 	}
 
 	public LoginController getLoginController() throws RemoteException {
+		System.out.println("Muestro lo que llega desde la GUI a ServerImpl");
 		return LoginControllerImpl.getInstance();
 	}
 

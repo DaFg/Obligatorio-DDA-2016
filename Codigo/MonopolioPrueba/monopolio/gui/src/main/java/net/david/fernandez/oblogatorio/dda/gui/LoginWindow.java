@@ -6,6 +6,7 @@ import javax.swing.text.Keymap;
 
 import net.david.fernandez.oblogatorio.dda.common.Server;
 import net.david.fernandez.oblogatorio.dda.common.dto.Jugador;
+import net.david.fernandez.oblogatorio.dda.common.dto.UsuarioCom;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -86,26 +87,35 @@ public class LoginWindow {
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String username = txtNombre.getText();
-				//String password = pFcontrasenia.getPassword().toString();
+				// String password = pFcontrasenia.getPassword().toString();
 				String p = pFcontrasenia.getText();
-				//char[] pass = pFcontrasenia.getPassword().toString();
+				// char[] pass = pFcontrasenia.getPassword().toString();
 				System.out.println("Esto es lo que recivo del usuario po la GUI");
 				System.out.println(username);
 				System.out.println(p);
 				try {
-					server.sendLogin(username, p);//para enviar.//
+					// server.sendLogin(username, p);// para enviar.//
+					// Jugador jugador =
+					// server.getLoginController().autenticar(username, p);
+					System.out.println("Estoy en el boton login");
+					// UsuarioCom jugador =
+					// server.getLoginController().autenticarUS(username, p);
 					Jugador jugador = server.getLoginController().autenticar(username, p);
-					if(jugador != null) {
-						TableroIU tablero= new TableroIU();
+					// User jugador =
+					// server.getLoginController().autenticarU(username,
+					// p);
+					System.out.println("Estoy en el boton login 2");
+					if (jugador != null) {
+						TableroIU tablero = new TableroIU();
 						tablero.getFrame().setVisible(true);
 						tablero.setServer(server);
 						frmMonopolio.setVisible(false);
 						// exito
 					} else {
 						frmMonopolio.setVisible(false);
-						TableroIU tablero= new TableroIU();
+						TableroIU tablero = new TableroIU();
 						tablero.getFrame().setVisible(true);
-						
+
 						tablero.setServer(server);
 						// no exito
 					}

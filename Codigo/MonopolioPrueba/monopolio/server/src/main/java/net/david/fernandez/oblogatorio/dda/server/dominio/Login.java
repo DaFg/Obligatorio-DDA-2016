@@ -9,7 +9,7 @@ public class Login {
 	 */
 
 	private String Nombre;
-	private char[] Contrasenia;
+	private String Contrasenia;
 
 	public String getNombre() {
 		return Nombre;
@@ -19,11 +19,11 @@ public class Login {
 		Nombre = nombre;
 	}
 
-	public char[] getContrasenia() {
+	public String getContrasenia() {
 		return Contrasenia;
 	}
 
-	public void setContrasenia(char[] contrasenia) {
+	public void setContrasenia(String contrasenia) {
 		Contrasenia = contrasenia;
 	}
 

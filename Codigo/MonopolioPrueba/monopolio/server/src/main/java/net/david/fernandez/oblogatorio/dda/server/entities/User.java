@@ -28,7 +28,7 @@ public class User extends Login implements Serializable {
 	private Integer id;
 
 	private String Nombre;
-	private char[] Contrasenia;
+	private String Contrasenia;
 
 	public User() {
 
@@ -50,19 +50,25 @@ public class User extends Login implements Serializable {
 		this.Nombre = nombre;
 	}
 
-	public char[] getContrasenia() {
+	public String getContrasenia() {
 		return Contrasenia;
 	}
 
-	public void setContrasenia(char[] contrasenia) {
+	public void setContrasenia(String contrasenia) {
 		Contrasenia = contrasenia;
 	}
 
+	// public char[] getContrasenia() {
+	// return Contrasenia;
+	// }
+	//
+	// public void setContrasenia(char[] contrasenia) {
+	// Contrasenia = contrasenia;
+	// }
+	//
 	public void buscarLoguin(String nombre, String contrasenia) {
 
-		/*
-		 * Busco el usuario y verifico la contraseñ que me envian de ServerImpl.
-		 */
+		// Busco el usuario y verifico la contraseñ que me envian de ServerImpl.
 
 		System.out.println("Muestro lo que llega desde Login a LoginController");
 		System.out.println(nombre);

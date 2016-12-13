@@ -5,7 +5,10 @@ import java.rmi.server.UnicastRemoteObject;
 
 import net.david.fernandez.oblogatorio.dda.common.LoginController;
 import net.david.fernandez.oblogatorio.dda.common.dto.Jugador;
+import net.david.fernandez.oblogatorio.dda.common.dto.UsuarioCom;
 import net.david.fernandez.oblogatorio.dda.server.entities.JugadorServicio;
+import net.david.fernandez.oblogatorio.dda.server.entities.User;
+//import net.david.fernandez.oblogatorio.dda.common.dto.User;
 
 public class LoginControllerImpl extends UnicastRemoteObject implements LoginController {
 
@@ -24,10 +27,21 @@ public class LoginControllerImpl extends UnicastRemoteObject implements LoginCon
 	}
 
 	public Jugador autenticar(String username, String password) throws RemoteException {
+		System.out.println("Estoy en autenticar dentro de loginControllerImpl.");
 		Jugador js = new JugadorServicio().getInstance().getUsuario(username, password);
 		return js;
 	}
 
-	
+	public Object autenticarU(String username, String password) throws RemoteException {
+		System.out.println("Estoy en autenticarU dentro de loginControllerImpl.");
+		Object juga = new JugadorServicio().getInstance().getDatosUsuario(username, password);
+		return juga;
+	}
+
+	/*public UsuarioCom autenticarUS(String username, String password) throws RemoteException {
+		System.out.println("Estoy en autenticar dentro de loginControllerImpl.");
+		UsuarioCom js = new JugadorServicio().getInstance().getDatosUsuario(username, password);
+		return js;
+	}*/
 
 }
